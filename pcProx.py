@@ -8,7 +8,7 @@
 # You may need to change VENDER_ID and PRODUCT_ID corresponding to your reader model
 # JRK 2018-01-31 - forked/modified code to accommodate the reader config I use,
 # and the 26-bit cards
-# Returning the Facility Access code and number in a tuple
+# Returning the Facility Access Code and ID Number in a tuple
 
 import usb.core
 import usb.util
@@ -23,7 +23,8 @@ def binToInt(binary):
 def getProx():
     ### CONFIG
     ### You may need to change VENDER_ID and PRODUCT_ID corresponding to a reader model
-    ### JRK - changed PROX_END to 4
+    ### JRK - changed PROX_END to 4 to accommodate the reader config I use
+    ### RFID reader config = no stripping of leading digits or trailing digits.
     VENDER_ID = 0x0C27
     PRODUCT_ID = 0x3BFA
     PROX_END = 4
